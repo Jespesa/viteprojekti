@@ -39,7 +39,6 @@
             <td><button class="del">Delete</button></td>
             <td>1</td>
           </tr>
-          <!--  <tr class="active-row"> -->
           <tr>
             <td>Melissa</td>
             <td>melissa@google.com</td>
@@ -80,9 +79,6 @@
               </tr>
             </thead>
             <tbody class="tbody">
-              <!-- tänne haetaan kaikki käyttäjät -->
-              <!-- # Get all users -->
-              <!-- GET http://127.0.0.1:3000/api/users -->
             </tbody>
           </table>
         </div>
@@ -94,9 +90,6 @@
             nappulasta 'Add User'.
           </p>
 
-          <!-- https://www.w3schools.com/css/css_form.asp -->
-          <!-- https://www.w3schools.com/css/tryit.asp?filename=trycss_form_padding -->
-
           <pre style="overflow: auto">
   POST http://localhost:3000/api/users
   content-type: application/json
@@ -105,8 +98,7 @@
     "username": "Uusi käyttäjä",
     "password": "salakala",
     "email": "newuser@example.com"
-  }</pre
-          >
+  }</pre>
 
           <form class="addform">
             <label for="username">Username</label>
@@ -114,49 +106,68 @@
               id="username"
               type="text"
               name="username"
-              placeholder="Uusi käyttäjä"
-            />
+              placeholder="Uusi käyttäjä" />
             <label for="password">Password</label>
             <input
               id="password"
               type="password"
               name="password"
-              placeholder="salakala"
-            />
+              placeholder="salakala" />
             <label for="password">Email</label>
             <input
               id="email"
               type="email"
               name="email"
-              placeholder="newuser@example.com"
-            />
+              placeholder="newuser@example.com" />
             <input
               name="submit"
               type="submit"
               value="Add User"
-              class="formpost"
-            />
+              class="formpost" />
           </form>
         </div>
       </div>
 
-      <!-- User info dialog -->
+      <h3>Flexboxilla tehdyt kortit - Runko</h3>
+
+      <!-- Lisää nappi päiväkirjamerkintöjen hakemiseen -->
+      <button class="get_diary_entries">Hae päiväkirjamerkinnät</button>
+
+      <!-- kortit sisältävä flex parent -->
+      <section class="card-area">
+        <!-- Tässä tulevat dynaamisesti lisätyt kortit -->
+        <div class="card">
+          <div class="card-img">
+            <img src="/src/img/lilonukkuu.jpg" alt="Lilo sleeping" />
+          </div>
+          <div class="card-diary">
+            <p>Tänne dataa</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-img">
+            <img src="/src/img/lilonukkuu.jpg" alt="Lilo sleeping" />
+          </div>
+          <div class="card-diary">
+            <p>Tänne dataa</p>
+          </div>
+        </div>
+      </section>
+
       <dialog class="info_dialog">
         <div class="dialog-content">
-            <h2>Käyttäjätiedot</h2>
-            <p><strong>ID:</strong> <span></span></p>
-            <p><strong>Käyttäjänimi:</strong> <span></span></p>
-            <p><strong>Sähköposti:</strong> <span></span></p>
-            <p><strong>Taso:</strong> <span></span></p>
-            <div class="dialog-buttons">
-                <button class="close-btn">Sulje</button>
-            </div>
+          <h2>Käyttäjätiedot</h2>
+          <p><strong>ID:</strong> <span></span></p>
+          <p><strong>Käyttäjänimi:</strong> <span></span></p>
+          <p><strong>Sähköposti:</strong> <span></span></p>
+          <p><strong>Taso:</strong> <span></span></p>
+          <div class="dialog-buttons">
+            <button class="close-btn">Sulje</button>
+          </div>
         </div>
-    </dialog>
-    
+      </dialog>
 
-      <!-- The actual snackbar -->
-      <div id="snackbar">Some text some message..</div>
     </main>
 
     <script type="module" src="/src/js/main.js"></script>

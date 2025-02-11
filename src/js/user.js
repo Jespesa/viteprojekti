@@ -8,6 +8,44 @@ closeButton.addEventListener('click', () => {
     dialog.close();
 });
 
+// Haetaan päiväkirjamerkinnät
+const getDiaryEntries = async () => {
+    const url = 'http://localhost:3000/api/diaryentries';  // Korvaa omalla endpointillasi
+    const diaryEntries = await fetchData(url);
+
+    if (diaryEntries.error) {
+        console.error('Virhe fetch-haussa:', diaryEntries.error);
+        return;
+    }
+
+    console.log(diaryEntries);
+
+    const cardArea = document.querySelector('.card-area');
+    cardArea.innerHTML = '';  // Tyhjennetään korttialue ennen uusien merkintöjen näyttämistä
+
+    diaryEntries.forEach((entry) => {
+        const card = document.createElement('div');
+        card.classList.add('card');
+        
+        card.innerHTML = `
+            <div class="card-img">
+                <img src="/src/img/lilonukkuu.jpg" alt="Diary Entry Image" />
+            </div>
+            <div class="card-diary">
+                <p><strong>Mood:</strong> ${entry.mood}</p>
+                <p><strong>Weight:</strong> ${entry.weight} kg</p>
+                <p><strong>Sleep:</strong> ${entry.sleep_hours} hours</p>
+                <p><strong>Notes:</strong> ${entry.notes}</p>
+            </div>
+        `;
+
+        cardArea.appendChild(card);
+    });
+};
+
+// Hae päiväkirjamerkinnät -nappulan tapahtumakuuntelija
+document.querySelector('.get_diary_entries').addEventListener('click', getDiaryEntries);
+
 // Haetaan käyttäjät ja täytetään taulukko
 const getUsers = async () => {
     const url = 'http://localhost:3000/api/users';
