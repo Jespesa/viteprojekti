@@ -1,5 +1,13 @@
 import { fetchData } from "./fetch.js";
 
+// Määritellään dialog-muuttuja globaalisti
+const dialog = document.querySelector('.info_dialog');
+const closeButton = dialog.querySelector('button');
+
+closeButton.addEventListener('click', () => {
+    dialog.close();
+});
+
 // Haetaan käyttäjät ja täytetään taulukko
 const getUsers = async () => {
     const url = 'http://localhost:3000/api/users';
@@ -48,23 +56,21 @@ const addButtonEventListeners = () => {
                     return;
                 }
 
-                alert(`User Info:\nUsername: ${userDetails.username}\nEmail: ${userDetails.email}\nUser ID: ${userDetails.user_id}\nUser Level: ${userDetails.user_level}\nCreated At: ${userDetails.created_at}`);
+                // Päivitetään dialogin sisältö ja avataan se
+                const spans = dialog.querySelectorAll('.dialog-content span');
+                spans[0].textContent = userDetails.user_id;
+                spans[1].textContent = userDetails.username;
+                spans[2].textContent = userDetails.email;
+                spans[3].textContent = userDetails.user_level;
+
+                dialog.showModal();
+
             } catch (error) {
                 console.error('Error fetching user:', error);
             }
         });
     });
 };
-
-// "Get all users" -napin event listener
-document.addEventListener("DOMContentLoaded", () => {
-    const getUsersButton = document.querySelector('.get_users');
-    if (getUsersButton) {
-        getUsersButton.addEventListener('click', getUsers);
-    } else {
-        console.error('Elementti ".get_users" ei löytynyt. Tarkista HTML.');
-    }
-});
 
 // Käyttäjän lisääminen
 const addUser = async (event) => {
@@ -108,16 +114,6 @@ const addUser = async (event) => {
     getUsers(); // Päivitetään käyttäjälista
 };
 
-// "Add User" -napin event listener
-document.addEventListener("DOMContentLoaded", () => {
-    const addUserForm = document.querySelector('.formpost');
-    if (addUserForm) {
-        addUserForm.addEventListener('click', addUser);
-    } else {
-        console.error('Elementti ".formpost" ei löytynyt. Tarkista HTML.');
-    }
-});
-
 // Toast-viestien näyttäminen
 const showToast = (message, type) => {
     const toast = document.createElement('div');
@@ -129,5 +125,24 @@ const showToast = (message, type) => {
         toast.remove();
     }, 3000);
 };
+
+// "DOMContentLoaded" event listener
+document.addEventListener("DOMContentLoaded", () => {
+    // "Get all users" -napin event listener
+    const getUsersButton = document.querySelector('.get_users');
+    if (getUsersButton) {
+        getUsersButton.addEventListener('click', getUsers);
+    } else {
+        console.error('Elementti ".get_users" ei löytynyt. Tarkista HTML.');
+    }
+
+    // "Add User" -napin event listener
+    const addUserForm = document.querySelector('.formpost');
+    if (addUserForm) {
+        addUserForm.addEventListener('click', addUser);
+    } else {
+        console.error('Elementti ".formpost" ei löytynyt. Tarkista HTML.');
+    }
+});
 
 export { getUsers, addUser };

@@ -11,11 +11,10 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  --blue: ;
 }
 
-{
-box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
 
 body {
@@ -74,6 +73,7 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
@@ -147,7 +147,7 @@ button.del {
 }
 
 form {
-  background-color: var(--blue);
+  background-color: #009879;
   color: #ffffff;
   padding: 10px;
   margin-top: 25px;
@@ -166,11 +166,68 @@ input[type=text], input[type=password], input[type=email] {
 }
 
 pre {
-  background-color: var(--blue);
+  background-color: aliceblue;
 }
 
 @media screen and (max-width: 800px) {
   .forms {
     flex-direction: column;
   }
+}
+
+/* Tyylitelty dialogi */
+dialog {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  max-width: 400px;
+  background-color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  text-align: center;
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.dialog-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.dialog-content h2 {
+  font-size: 1.5rem;
+  color: #213547;
+  margin-bottom: 10px;
+}
+
+.dialog-content p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.dialog-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 15px;
+}
+
+.dialog-buttons button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.dialog-buttons .close-btn {
+  background-color: #f44336;
+  color: white;
+}
+
+.dialog-buttons .close-btn:hover {
+  background-color: #d32f2f;
 }
