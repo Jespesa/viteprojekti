@@ -5,7 +5,7 @@ import {getUsers, addUser} from './users.js';
 import {getData} from './test.js';
 import {getEntries} from './entries.js';
 
-document.querySelector('#app').innerHTML = 'Moi tässä oman APIn harjoituksia';
+document.querySelector('#app').innerHTML = `Moi kirjautunut käyttäjä ${localStorage.getItem('nimi')}`;
 
 getData();
 

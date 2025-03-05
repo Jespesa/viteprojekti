@@ -57,54 +57,46 @@ const registerUser = async (event) => {
 const loginUser = async (event) => {
   event.preventDefault();
 
-  // Haetaan oikea formi
   const loginForm = document.querySelector('.loginForm');
+  const username = loginForm.querySelector('input[name=username]').value.trim();
+  const password = loginForm.querySelector('input[name=password]').value.trim();
 
-  // haetaan formista arvot tällä kertaa 
-  const username = loginForm.querySelector('input[name=username]').value;
-  const password = loginForm.querySelector('input[name=password]').value;
-
-  // Luodaan body lähetystä varten taustapalvelun vaatimaan muotoon
-  const bodyData = {
-    username: username,
-    password: password,
-  };
-
-  // Endpoint
+  const bodyData = { username, password };
   const url = 'http://localhost:3000/api/auth/login';
 
-  // Options
   const options = {
     body: JSON.stringify(bodyData),
     method: 'POST',
-    headers: {
-      'Content-type': 'application/json',
-    },
+    headers: { 'Content-type': 'application/json' },
   };
-  console.log(options);
 
-  // Hae data
+  console.log('🔹 Lähetetään kirjautumispyyntö:', options);
   const response = await fetchData(url, options);
 
   if (response.error) {
-    console.error('Error adding a new user:', response.error);
+    console.error('⛔ Kirjautumisvirhe:', response.error);
+    alert('Kirjautuminen epäonnistui! Tarkista käyttäjätunnus ja salasana.');
     return;
   }
 
-  if (response.token) {
-    console.log('Kirjautuminen onnistui! Token:', response.token);
-    localStorage.setItem('token', response.token); // Tallennetaan token localStorageen
-  } else {
-    console.error('Virhe: Tokenia ei palautettu.');
+  if (!response.token || !response.user) {
+    console.error('⛔ Backend ei palauttanut tarvittavia tietoja:', response);
+    alert('Kirjautuminen epäonnistui! Palvelinvirhe.');
+    return;
   }
 
-  if (response.message) {
-    console.log(response.message, 'success');
-  }
+  console.log('✅ Kirjautuminen onnistui:', response);
+  localStorage.setItem('token', response.token);
+  localStorage.setItem('nimi', response.user.username);
 
-  console.log(response);
-  loginForm.reset(); // tyhjennetään formi
+  alert('Kirjautuminen onnistui, siirrän sinut pääsivulle!');
+  
+  // Käytetään pientä viivettä, jotta alert näkyy ennen uudelleenohjausta
+  setTimeout(() => {
+    location.href = './apitest.html';
+  }, 500);
 };
+
 
 
 const checkUser = async (event) => {
