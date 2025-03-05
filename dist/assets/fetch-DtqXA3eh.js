@@ -1,0 +1,1 @@
+const t=async(e,a={})=>{try{const r=await fetch(e,a);return r.ok?await r.json():{error:(await r.json()).message||"An error occurred"}}catch(r){return console.error("fetchData() error:",r.message),{error:r.message}}};export{t as f};
