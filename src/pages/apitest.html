@@ -16,8 +16,11 @@
         Hae kaikki items tiedot omasta backendistä ja printtaa tulos konsoliin
       </p>
 
+<<<<<<< HEAD
       <ul class="testlist"></ul>
 
+=======
+>>>>>>> f68412fc22f7b29e150acd1f1e63c28449f3a758
       <pre>GET http://localhost:3000/api/items </pre>
       <button class="get_items">Get all items</button>
 
@@ -41,7 +44,10 @@
             <td><button class="del">Delete</button></td>
             <td>1</td>
           </tr>
+<<<<<<< HEAD
           <!--  <tr class="active-row"> -->
+=======
+>>>>>>> f68412fc22f7b29e150acd1f1e63c28449f3a758
           <tr>
             <td>Melissa</td>
             <td>melissa@google.com</td>
@@ -81,10 +87,14 @@
                 <th>ID</th>
               </tr>
             </thead>
+<<<<<<< HEAD
             <tbody id="taulukko" class="tbody">
               <!-- tänne haetaan kaikki käyttäjät -->
               <!-- # Get all users -->
               <!-- GET http://127.0.0.1:3000/api/users -->
+=======
+            <tbody class="tbody">
+>>>>>>> f68412fc22f7b29e150acd1f1e63c28449f3a758
             </tbody>
           </table>
         </div>
@@ -97,7 +107,10 @@
           </p>
 
           <pre style="overflow: auto">
+<<<<<<< HEAD
 
+=======
+>>>>>>> f68412fc22f7b29e150acd1f1e63c28449f3a758
   POST http://localhost:3000/api/users
   content-type: application/json
 
@@ -105,8 +118,12 @@
     "username": "Uusi käyttäjä",
     "password": "salakala",
     "email": "newuser@example.com"
+<<<<<<< HEAD
   }
           </pre>
+=======
+  }</pre>
+>>>>>>> f68412fc22f7b29e150acd1f1e63c28449f3a758
 
           <form class="addform">
             <label for="username">Username</label>
@@ -114,33 +131,50 @@
               id="username"
               type="text"
               name="username"
+<<<<<<< HEAD
               placeholder="Uusi käyttäjä"
             />
+=======
+              placeholder="Uusi käyttäjä" />
+>>>>>>> f68412fc22f7b29e150acd1f1e63c28449f3a758
             <label for="password">Password</label>
             <input
               id="password"
               type="password"
               name="password"
+<<<<<<< HEAD
               placeholder="salakala"
             />
+=======
+              placeholder="salakala" />
+>>>>>>> f68412fc22f7b29e150acd1f1e63c28449f3a758
             <label for="password">Email</label>
             <input
               id="email"
               type="email"
               name="email"
+<<<<<<< HEAD
               placeholder="newuser@example.com"
             />
+=======
+              placeholder="newuser@example.com" />
+>>>>>>> f68412fc22f7b29e150acd1f1e63c28449f3a758
             <input
               name="submit"
               type="submit"
               value="Add User"
+<<<<<<< HEAD
               class="formpost"
             />
+=======
+              class="formpost" />
+>>>>>>> f68412fc22f7b29e150acd1f1e63c28449f3a758
           </form>
         </div>
       </div>
 
       <h3>Flexboxilla tehdyt kortit - Runko</h3>
+<<<<<<< HEAD
       <!-- kortit sisältävä flex parent -->
 
       <section class="card-area">
@@ -155,10 +189,35 @@
           <div class="card-diary">
             <!-- tänne myös flexbox rakenne -->
             Tänne dataa
+=======
+
+      <!-- Lisää nappi päiväkirjamerkintöjen hakemiseen -->
+      <button class="get_diary_entries">Hae päiväkirjamerkinnät</button>
+
+      <!-- kortit sisältävä flex parent -->
+      <section class="card-area">
+        <!-- Tässä tulevat dynaamisesti lisätyt kortit -->
+        <div class="card">
+          <div class="card-img">
+            <img src="/src/img/lilonukkuu.jpg" alt="Lilo sleeping" />
+          </div>
+          <div class="card-diary">
+            <p>Tänne dataa</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-img">
+            <img src="/src/img/lilonukkuu.jpg" alt="Lilo sleeping" />
+          </div>
+          <div class="card-diary">
+            <p>Tänne dataa</p>
+>>>>>>> f68412fc22f7b29e150acd1f1e63c28449f3a758
           </div>
         </div>
       </section>
 
+<<<<<<< HEAD
       <h3>Flexboxilla tehty kortti + Fetch + Itse luodut elementit</h3>
 
       <button class="get_entries">Hae päiväkirjamerkinnät</button>
@@ -178,6 +237,23 @@
       <button autofocus>Close</button>
     </dialog>
 
+=======
+      <dialog class="info_dialog">
+        <div class="dialog-content">
+          <h2>Käyttäjätiedot</h2>
+          <p><strong>ID:</strong> <span></span></p>
+          <p><strong>Käyttäjänimi:</strong> <span></span></p>
+          <p><strong>Sähköposti:</strong> <span></span></p>
+          <p><strong>Taso:</strong> <span></span></p>
+          <div class="dialog-buttons">
+            <button class="close-btn">Sulje</button>
+          </div>
+        </div>
+      </dialog>
+
+    </main>
+
+>>>>>>> f68412fc22f7b29e150acd1f1e63c28449f3a758
     <script type="module" src="/src/js/main.js"></script>
   </body>
 </html>

@@ -1,19 +1,28 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> f68412fc22f7b29e150acd1f1e63c28449f3a758
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
+<<<<<<< HEAD
 
   /* color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424; */
 
+=======
+>>>>>>> f68412fc22f7b29e150acd1f1e63c28449f3a758
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+<<<<<<< HEAD
   --pink: rgb(216, 133, 147);
   --p-10: 10px;
+=======
+>>>>>>> f68412fc22f7b29e150acd1f1e63c28449f3a758
 }
 
 * {
@@ -53,6 +62,7 @@ a:hover {
   color: rgb(0, 0, 0);
 }
 
+<<<<<<< HEAD
 nav {
   background-color: #333;
   padding: 10px;
@@ -81,6 +91,8 @@ nav ul li a:hover {
   background-color: #555;
 }
 
+=======
+>>>>>>> f68412fc22f7b29e150acd1f1e63c28449f3a758
 main {
   max-width: 900px;
   margin: auto;
@@ -93,6 +105,7 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
+<<<<<<< HEAD
   /* background-color: #1a1a1a; */
   cursor: pointer;
   transition: border-color 0.25s;
@@ -100,6 +113,16 @@ button {
 button:hover {
   border-color: #646cff;
 }
+=======
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+button:hover {
+  border-color: #646cff;
+}
+
+>>>>>>> f68412fc22f7b29e150acd1f1e63c28449f3a758
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
@@ -141,14 +164,22 @@ button.del {
 }
 
 .styled-table thead tr {
+<<<<<<< HEAD
   background-color: var(--pink);
+=======
+  background-color: #009879;
+>>>>>>> f68412fc22f7b29e150acd1f1e63c28449f3a758
   color: #ffffff;
   text-align: left;
 }
 
 .styled-table th,
 .styled-table td {
+<<<<<<< HEAD
     padding: 12px 15px;
+=======
+  padding: 12px 15px;
+>>>>>>> f68412fc22f7b29e150acd1f1e63c28449f3a758
 }
 
 .styled-table tbody tr {
@@ -162,6 +193,10 @@ button.del {
 .styled-table tbody tr:last-of-type {
   border-bottom: 2px solid #009879;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> f68412fc22f7b29e150acd1f1e63c28449f3a758
 .styled-table tbody tr.active-row {
   font-weight: bold;
   color: #009879;
@@ -178,7 +213,11 @@ button.del {
 }
 
 form {
+<<<<<<< HEAD
   background-color:  var(--pink);
+=======
+  background-color: #009879;
+>>>>>>> f68412fc22f7b29e150acd1f1e63c28449f3a758
   color: #ffffff;
   padding: 10px;
   margin-top: 25px;
@@ -200,6 +239,7 @@ pre {
   background-color: aliceblue;
 }
 
+<<<<<<< HEAD
 dialog {
   top: 50%;
   transform: translateY(-50%);
@@ -255,11 +295,122 @@ dialog {
   height: 400px;
 }
 
+=======
+>>>>>>> f68412fc22f7b29e150acd1f1e63c28449f3a758
 @media screen and (max-width: 800px) {
   .forms {
     flex-direction: column;
   }
 }
 
+<<<<<<< HEAD
 
 
+=======
+/* Tyylitelty dialogi */
+dialog {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  max-width: 400px;
+  background-color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  text-align: center;
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.dialog-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.dialog-content h2 {
+  font-size: 1.5rem;
+  color: #213547;
+  margin-bottom: 10px;
+}
+
+.dialog-content p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.dialog-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 15px;
+}
+
+.dialog-buttons button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.dialog-buttons .close-btn {
+  background-color: #f44336;
+  color: white;
+}
+
+.dialog-buttons .close-btn:hover {
+  background-color: #d32f2f;
+}
+
+/* Flexboxilla tehdyt kortit */
+.card-area {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  display: flex;
+  justify-content: space-between;
+  width: 48%; /* Kortit vierekkäin */
+  max-width: 1200px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.card-img {
+  flex: 1;
+  padding: 20px;
+}
+
+.card-img img {
+  width: 100%; /* Suurempi kuva */
+  height: auto;
+  border-radius: 8px;
+}
+
+.card-diary {
+  flex: 2;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card-diary p {
+  font-size: 1.2em;
+  line-height: 1.5;
+}
+
+@media screen and (max-width: 800px) {
+  .card {
+    width: 100%; /* Pienentää korttien leveyttä mobiilissa */
+  }
+}
+>>>>>>> f68412fc22f7b29e150acd1f1e63c28449f3a758

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* The snackbar - position it at the bottom and in the middle of the screen */
 #snackbar {
   visibility: hidden;
@@ -12,12 +13,29 @@
   left: 50%; /* Center the snackbar */
   transform: translate(-50%, 0);
   bottom: 30px; /* 30px from the bottom */
+=======
+/* The snackbar - position it at the bottom and in the middle of the screen /
+#snackbar {
+  visibility: hidden; / Hidden by default. Visible on click /
+  min-width: 250px; / Set a default minimum width /
+  background-color: #333; / Black background color /
+  color: #fff; / White text color /
+  text-align: center; / Centered text /
+  border-radius: 2px; / Rounded borders /
+  padding: 16px; / Padding /
+  position: fixed; / Sit on top of the screen /
+  z-index: 1; / Add a z-index if needed /
+  left: 50%; / Center the snackbar /
+  transform: translate(-50%, 0);
+  bottom: 30px; / 30px from the bottom /
+>>>>>>> f68412fc22f7b29e150acd1f1e63c28449f3a758
 }
 
 #snackbar.error {
   background-color: crimson;
 }
 
+<<<<<<< HEAD
 #snackbar.success {
   background-color: rgb(94, 240, 72);
 }
@@ -31,11 +49,20 @@
   visibility: visible; /* Show the snackbar */
   /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
   However, delay the fade out process for 2.5 seconds */
+=======
+
+#snackbar.show {
+  visibility: visible; 
+>>>>>>> f68412fc22f7b29e150acd1f1e63c28449f3a758
   -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
   animation: fadein 0.5s, fadeout 0.5s 2.5s;
 }
 
+<<<<<<< HEAD
 /* Animations to fade the snackbar in and out */
+=======
+/ Animations to fade the snackbar in and out */
+>>>>>>> f68412fc22f7b29e150acd1f1e63c28449f3a758
 @-webkit-keyframes fadein {
   from {bottom: 0; opacity: 0;}
   to {bottom: 30px; opacity: 1;}
@@ -54,4 +81,8 @@
 @keyframes fadeout {
   from {bottom: 30px; opacity: 1;}
   to {bottom: 0; opacity: 0;}
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> f68412fc22f7b29e150acd1f1e63c28449f3a758

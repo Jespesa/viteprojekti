@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "name": "hyte-projekti",
+=======
+  "name": "yksilo-projekti",
+>>>>>>> f68412fc22f7b29e150acd1f1e63c28449f3a758
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -9,6 +13,10 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+<<<<<<< HEAD
     "vite": "^6.0.5"
+=======
+    "vite": "^6.1.0"
+>>>>>>> f68412fc22f7b29e150acd1f1e63c28449f3a758
   }
 }
